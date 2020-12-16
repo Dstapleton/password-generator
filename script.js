@@ -27,21 +27,12 @@ function passwordOptions() {
 
   if (lengthVal <= minchar){
     alert("Your password length must be at lest 8 characters");
-<<<<<<< HEAD:Develop/script.js
-      console.log("User error minlength");
-=======
     lengthVal = parseInt(prompt("what is the length of your new password?") );
->>>>>>> develop:script.js
   }
   else if (lengthVal >= maxchar){
       alert("Your password length must be less that 128 characters");
       lengthVal = parseInt(prompt("what is the length of your new password?") );
   }
-<<<<<<< HEAD:Develop/script.js
- 
-=======
-
->>>>>>> develop:script.js
   var numericVal = confirm("Would you like numbers included");
   
 
@@ -102,12 +93,6 @@ function generatePassword(){
   return newPassword;
 
 }
-<<<<<<< HEAD:Develop/script.js
-
-function randomise(randInput){
-  var randArray = [];
-=======
->>>>>>> develop:script.js
 
 //
 function copyPassword(){
@@ -118,12 +103,9 @@ function copyPassword(){
     
 }
 
-<<<<<<< HEAD:Develop/script.js
-=======
 
   var copyBtn = document.getElementById("copy");
   copyBtn.addEventListener("click",copyPassword);
->>>>>>> develop:script.js
 
 // Get references to the #generate element
   var generateBtn = document.getElementById('generate');
@@ -139,8 +121,4 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-<<<<<<< HEAD:Develop/script.js
-generateBtn.addEventListener("click",writePassword );
-=======
 generateBtn.addEventListener("click",writePassword);
->>>>>>> develop:script.js
