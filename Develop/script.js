@@ -105,6 +105,7 @@ function copyPassword(){
     document.execCommand("Copy");
     alert("Password has been copied to your clipboard");
   }
+
   var copyBtn = document.getElementById("copy");
   copyBtn.addEventListener("click",copyPassword);
 
@@ -121,7 +122,7 @@ function randomise(randInput){
 */
 
 // Get references to the #generate element
-  var generateBtn = document.getElementById("generate");
+  var generateBtn = document.getElementById('generate');
 
 // Write password to the #password input
 function writePassword() {
