@@ -51,7 +51,7 @@ function passwordOptions() {
     upperCase:uppercase,
     specialchar:specialVal
   }
-  return passwordList;
+  return passwordList, lengthVal;
 }
 
 //
@@ -91,9 +91,24 @@ function generatePassword(){
     
    var newPassword = randArray.join('');
   return newPassword;
-
 }
 
+function copyPassword(){
+
+  if(passwordOptions.lengthVal){
+      document.querySelector("#password").select();
+  }
+   else if(!passwordOptions.lengthVal){
+    alert("You must first create a password to be copied");
+    return;
+   }
+    document.execCommand("Copy");
+    alert("Password has been copied to your clipboard");
+  }
+  var copyBtn = document.getElementById("copy");
+  copyBtn.addEventListener("click",copyPassword);
+
+/*
 function randomise(randInput){
   var randArray = [];
 
@@ -103,10 +118,10 @@ function randomise(randInput){
   }
   return randArray;
 }
-
+*/
 
 // Get references to the #generate element
-  var generateBtn = document.getElementById('generate');
+  var generateBtn = document.getElementById("generate");
 
 // Write password to the #password input
 function writePassword() {
@@ -114,7 +129,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-  console.log("Being clicked");
 
 }
 
