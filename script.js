@@ -4,12 +4,13 @@ var minchar = 7;
 var numerics = [0,1,2,3,4,5,6,7,8,9];
 var upper = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 var lower = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-var special = ['#','$','%','&','(',')','*','+',',','-','.','/',':',';','<','=','>','?','@','['];
+var special = ['#','$','%','&','(',')','*','+',',','-','.','/',':',';','<','=','>','?','@','[',']'];
+
 
 function passwordOptions() {
  
   //
-  var lengthVal = parseInt(prompt("what is the length of your new password?") );
+  var lengthVal = parseInt(prompt("what is the length of your new password?") );;
   var counter = 0;
 
   //check for no input
@@ -19,20 +20,20 @@ function passwordOptions() {
     lengthVal = parseInt(prompt("what is the length of your new password?") );
     counter ++;
     //exit after 2 failed attemps
-    if (counter >= 1){
+    if (counter >= 2){
       return;
     }
   }
 
   if (lengthVal <= minchar){
     alert("Your password length must be at lest 8 characters");
-      console.log("User error minlength");
+    lengthVal = parseInt(prompt("what is the length of your new password?") );
   }
   else if (lengthVal >= maxchar){
       alert("Your password length must be less that 128 characters");
-      console.log("User error maxlenght");
+      lengthVal = parseInt(prompt("what is the length of your new password?") );
   }
- 
+
   var numericVal = confirm("Would you like numbers included");
   
 
@@ -51,7 +52,7 @@ function passwordOptions() {
     upperCase:uppercase,
     specialchar:specialVal
   }
-  return passwordList, lengthVal;
+  return passwordList;
 }
 
 //
@@ -93,33 +94,18 @@ function generatePassword(){
   return newPassword;
 }
 
+//
 function copyPassword(){
 
-  if(passwordOptions.lengthVal){
-      document.querySelector("#password").select();
-  }
-   else if(!passwordOptions.lengthVal){
-    alert("You must first create a password to be copied");
-    return;
-   }
+    document.querySelector("#password").select();
     document.execCommand("Copy");
     alert("Password has been copied to your clipboard");
-  }
+    
+}
+
 
   var copyBtn = document.getElementById("copy");
   copyBtn.addEventListener("click",copyPassword);
-
-/*
-function randomise(randInput){
-  var randArray = [];
-
-  for(i = 0; i <= randInput.length; ++i){
-  var randval = Math.floor(Math.random() * Math.floor(randInput.length));
-    randArray.push(randInput[randval]);
-  }
-  return randArray;
-}
-*/
 
 // Get references to the #generate element
   var generateBtn = document.getElementById('generate');
