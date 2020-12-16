@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
+    <div class="wrapper">
+      <header>
         <h1>Password Generator</h1>
       </header>
-    <section class="wrapper">
       <div class="card">
         <div class="card-header">
           <h2>Generate a Password</h2>
@@ -22,15 +22,13 @@
             id="password"
             placeholder="Your Secure Password"
             aria-label="Generated Password"
-            >
-          </textarea>
+          ></textarea>
         </div>
         <div class="card-footer">
-          
-        <button id="generate" class="btn">Generate Password</button>
+          <button id="generate" class="btn">Generate Password</button>
         </div>
       </div>
-    </section>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
