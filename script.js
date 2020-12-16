@@ -4,12 +4,13 @@ var minchar = 7;
 var numerics = [0,1,2,3,4,5,6,7,8,9];
 var upper = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 var lower = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-var special = ['#','$','%','&','(',')','*','+',',','-','.','/',':',';','<','=','>','?','@','['];
+var special = ['#','$','%','&','(',')','*','+',',','-','.','/',':',';','<','=','>','?','@','[',']'];
+
 
 function passwordOptions() {
  
   //
-  var lengthVal = parseInt(prompt("what is the length of your new password?") );
+  var lengthVal = parseInt(prompt("what is the length of your new password?") );;
   var counter = 0;
 
   //check for no input
@@ -26,13 +27,21 @@ function passwordOptions() {
 
   if (lengthVal <= minchar){
     alert("Your password length must be at lest 8 characters");
+<<<<<<< HEAD:Develop/script.js
       console.log("User error minlength");
+=======
+    lengthVal = parseInt(prompt("what is the length of your new password?") );
+>>>>>>> develop:script.js
   }
   else if (lengthVal >= maxchar){
       alert("Your password length must be less that 128 characters");
-      console.log("User error maxlenght");
+      lengthVal = parseInt(prompt("what is the length of your new password?") );
   }
+<<<<<<< HEAD:Develop/script.js
  
+=======
+
+>>>>>>> develop:script.js
   var numericVal = confirm("Would you like numbers included");
   
 
@@ -93,17 +102,28 @@ function generatePassword(){
   return newPassword;
 
 }
+<<<<<<< HEAD:Develop/script.js
 
 function randomise(randInput){
   var randArray = [];
+=======
+>>>>>>> develop:script.js
 
-  for(i = 0; i <= randInput.length; ++i){
-  var randval = Math.floor(Math.random() * Math.floor(randInput.length));
-    randArray.push(randInput[randval]);
-  }
-  return randArray;
+//
+function copyPassword(){
+
+    document.querySelector("#password").select();
+    document.execCommand("Copy");
+    alert("Password has been copied to your clipboard");
+    
 }
 
+<<<<<<< HEAD:Develop/script.js
+=======
+
+  var copyBtn = document.getElementById("copy");
+  copyBtn.addEventListener("click",copyPassword);
+>>>>>>> develop:script.js
 
 // Get references to the #generate element
   var generateBtn = document.getElementById('generate');
@@ -119,4 +139,8 @@ function writePassword() {
 }
 
 // Add event listener to generate button
+<<<<<<< HEAD:Develop/script.js
 generateBtn.addEventListener("click",writePassword );
+=======
+generateBtn.addEventListener("click",writePassword);
+>>>>>>> develop:script.js
